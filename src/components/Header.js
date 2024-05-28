@@ -1,31 +1,55 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-const Header = () => {
-  const navigate=useNavigate()
+import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import {addUser,removeUser} from "../utils/userSlice"
+import { NETFLIX_HEADER, NETFLIX_LOGOUT } from "../utils/constants";
 
+
+
+const Header = () => {
+  const navigate=useNavigate();
+  const dispatch=useDispatch();
+   
+  useEffect(()=>{
+   const unsubscribe= onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const {uid,email,displayName}= user;
+        dispatch(addUser({uid:uid,email:email,displayName:displayName}))
+        navigate("/browse")
+        
+      } else {
+        dispatch(removeUser());
+        navigate("/")
+      
+      }
+    });
+    //this will be called when component will unaamount
+    return ()=>unsubscribe();    
+   },[])
+  
   const handleSignOut=()=>{
     signOut(auth).then(() => {
-      navigate("/")
     }).catch((error) => {
       navigate("/errorPage")
     });
     
   }
   
-  return (
-    <div className="absolute w-screen px-12 mt-4 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
+  return (    
+    <div className="absolute w-screen px-12 mt-1 py-2 bg-gradient-to-t from-black z-10 flex justify-between">
     <img
       className="w-48"
-      src="https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg?w=460"
+      src={NETFLIX_HEADER}
       alt="logo"
     />
 
     <div className="p-2">
       <img
        className="w-8 h-8 "
-       src="https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
+       src={NETFLIX_LOGOUT}
        alt="logo"/>
 
         <button

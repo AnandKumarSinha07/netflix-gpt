@@ -2,6 +2,19 @@
 
 -create react app
 -configure  tailwind 
+-Routing of app
+-Login Form
+-Sign up
+-useRef HOOK
+-Firease authentication 
+-Deploying our app to production 
+-create sign up ,sign in and sign out using firebase doc authentication
+-created redox store 
+-BugFix: sing up user displayName and profile picture update 
+-BugFix: if the user is not loged in Redirect user to login page vice versa
+-Add hardcoded value in the constant file.
+-Register TMDB API  & create an application  
+-Get data from TMDB now playing movie list
 
 #Features
 Browse

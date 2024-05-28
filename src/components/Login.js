@@ -4,10 +4,9 @@ import { checkValidate } from "../utils/validate";
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
 
-import { useNavigate } from "react-router-dom";
  
 function Login() {
-  const navigate=useNavigate();
+ 
   const [isSignin,setisSignin]=useState(true);
   const [errMessage,seterrMessage]=useState(null);
 
@@ -24,7 +23,7 @@ function Login() {
     console.log(email.current.value);
     console.log(password.current.value);
     const message=checkValidate(email.current.value,password.current.value);
-    console.log(message)
+  //  console.log(message)
     seterrMessage(message)
 
     if(message)return null
@@ -52,17 +51,16 @@ function Login() {
        //sign in
        signInWithEmailAndPassword(auth, email.current.value, password.current.value )
       .then((userCredential) => {
-      // Signed in 
+       // Signed in 
        const user = userCredential.user;
        console.log(user);
-       navigate("/browse")
-    // ...
+    
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     seterrMessage(errorMessage+errorCode)
-    navigate("/browse")
+
   });
 
     }
