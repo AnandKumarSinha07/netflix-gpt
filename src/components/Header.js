@@ -35,7 +35,7 @@ const Header = () => {
     }).catch((error) => {
       navigate("/errorPage")
     });
-    
+     
   }
   
   return (    
@@ -57,8 +57,6 @@ const Header = () => {
          className="font-bold text-lg">sign Out
         </button>
     </div>
-
-
 
     </div>
     
