@@ -39,22 +39,23 @@ const Header = () => {
   }
   
   return (    
-    <div className="absolute w-screen px-12 mt-1 py-2 bg-gradient-to-t from-black z-10 flex justify-between">
+    <div className="absolute w-screen px-12 mt-1 py-2 bg-gradient-to-r from-black z-10 flex justify-between">
     <img
       className="w-48"
       src={NETFLIX_HEADER}
       alt="logo"
     />
-
+  
+   
     <div className="p-2">
       <img
-       className="w-8 h-8 "
+       className="w-16 h-8 "
        src={NETFLIX_LOGOUT}
        alt="logo"/>
 
         <button
          onClick={handleSignOut}
-         className="font-bold text-lg">sign Out
+         className="font-bold text-lg text-white">Sign Out
         </button>
     </div>
 

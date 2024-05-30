@@ -4,9 +4,9 @@ import { API_OPTIONS } from "../utils/constants";
 import { addTrailerVideo } from "../utils/moviesSlice";
 
 
-const useMovieTrailer = ({movie_id}) => {
+const useMovieTrailer = (movie_id) => {
   const dispatch = useDispatch();
- 
+  console.log(movie_id);
   const getMovieVideos = async () => {
     try {
       const data = await fetch(
@@ -14,12 +14,12 @@ const useMovieTrailer = ({movie_id}) => {
         API_OPTIONS
       );
       const json = await data.json();
-      console.log(json);
+      //console.log(json,"Not working ");
 
-      const trailers = json.results.filter((video) => video.type === "Trailer");
+      const trailers =  json.results.filter((video) => video.type === "Trailer");
       const trailer = trailers[0];
       dispatch(addTrailerVideo(trailer));
-      console.log(trailer);
+     // console.log(trailer);
     } catch (error) {
       console.log("Error", error);
     }
