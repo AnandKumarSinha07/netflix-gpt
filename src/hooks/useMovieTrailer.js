@@ -14,7 +14,7 @@ const useMovieTrailer = (movie_id) => {
         API_OPTIONS
       );
       const json = await data.json();
-      //console.log(json,"Not working ");
+      console.log(json,"Not working ");
 
       const trailers =  json.results.filter((video) => video.type === "Trailer");
       const trailer = trailers[0];

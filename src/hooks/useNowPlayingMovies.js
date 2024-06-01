@@ -14,7 +14,7 @@
         API_OPTIONS
       );
        const json = await data.json();
-       //console.log(json);
+       console.log("VideoBckground",json); 
        dispatch(addNowPlayingMovies(json.results));
     } catch (error) {
       console.log(error, "Error in the api call");

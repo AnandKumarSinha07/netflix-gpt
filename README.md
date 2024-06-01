@@ -46,10 +46,15 @@ Browse
      -redirect to browse page
      
 
-
+-GPT SEARCH FEATURES
 
 
 -FORM VALIDATION
--USE REF HOOK
+-USE REF HOOK  
+
+-Gpt search page
+-Gpt search bar
+-Multi language Feature 
+
 
 

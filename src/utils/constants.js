@@ -15,4 +15,10 @@ export const API_OPTIONS = {
   
   
   export const IMAGE_CDN_URL="https://image.tmdb.org/t/p/w500"
+  
+  export const IMAGE_BG_URL="https://assets.nflxext.com/ffe/siteui/vlv3/c7f07b68-7989-4ff7-a31e-11c17dcc2fea/fcf685b8-3f9f-42d8-9af3-4bb86fa5a3b8/IN-en-20240422-popsignuptwoweeks-perspective_alpha_website_large.jpg"
 
+  export const SUPPORTED_LANGUAGES=[{identifier:"en",name:"English"},
+  {identifier:"Hindi",name:"Hindi"},
+  {identifier:"Japan",name:"Japanese"}
+]

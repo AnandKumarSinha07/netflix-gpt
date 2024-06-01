@@ -3,6 +3,7 @@ import Header from "./Header";
 import { checkValidate } from "../utils/validate";
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { IMAGE_BG_URL } from "../utils/constants";
 
  
 function Login() {
@@ -72,7 +73,7 @@ function Login() {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/c7f07b68-7989-4ff7-a31e-11c17dcc2fea/fcf685b8-3f9f-42d8-9af3-4bb86fa5a3b8/IN-en-20240422-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={IMAGE_BG_URL}
           alt=""
         />
       </div>
